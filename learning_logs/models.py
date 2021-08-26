@@ -22,5 +22,8 @@ class Entry(models.Model):
     class Meta:
         verbose_name_plural = "entries"
 
-        def __str__(self):
+    def __str__(self):
+        if len(self.text) > 50:
             return f"{self.text[:50]}..."
+        else:
+            return self.text
